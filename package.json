@@ -1,0 +1,29 @@
+{
+  "name": "alacarte-poster",
+  "version": "0.0.1",
+  "description": "alacarte-poster",
+  "license": "MIT",
+  "repository": "",
+  "author": "Tobias Kahlert",
+  "keywords": [
+    ""
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc --pretty"
+  },
+  "dependencies": {
+    "jimp": "^0.2.27"
+  },
+  "devDependencies": {
+    "@types/jimp": "^0.2.1",
+    "typescript": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
