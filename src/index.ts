@@ -1,4 +1,4 @@
-import jimp = require('jimp');
+import * as jimp from 'jimp'
 
 function imgurl(x: number, y: number, z: number): string {
     //return `http://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;
@@ -11,14 +11,14 @@ type Bounds = [number, number];
 const parallelRequests = 10;
 const outfile = "out.png";
 
-/* border for the big image
+// border for the big image
 
 const wbordersrc = "wborder.png";
 const hbordersrc = "hborder.png";
-const cornersrc = "corner.png";*/
-const wbordersrc = "preview-wborder.png";
+const cornersrc = "corner.png";
+/*const wbordersrc = "preview-wborder.png";
 const hbordersrc = "preview-hborder.png";
-const cornersrc = "preview-corner.png";
+const cornersrc = "preview-corner.png";*/
 
 const tilesize = 256;
 
@@ -28,9 +28,14 @@ const horizontal: Bounds = [34278, 34317];
 const vertical: Bounds = [22493, 22517];*/
 
 // karlsruhe overview
-const zoomlvl = 14;
+/*const zoomlvl = 14;
 const horizontal: Bounds = [8570, 8578];
-const vertical: Bounds = [5623, 5629];
+const vertical: Bounds = [5623, 5629];*/
+
+// hannover near
+const zoomlvl = 15;
+const horizontal: Bounds = [17262, 17279];
+const vertical: Bounds = [10759, 10775]
 
 //const horizontal: Bounds = [34277, 34280];
 //const vertical: Bounds = [22493, 22500];
@@ -123,4 +128,12 @@ async function run()
     });
 }
 
-run();
+async function run_async() {
+    try {
+        await run()
+    } catch(e) {
+        console.error(e)
+    }
+}
+
+run_async();
